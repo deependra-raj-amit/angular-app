@@ -3,6 +3,12 @@
       <img src="assets/images/safebank.png" alt="safebank logo" class="logo" />
       SafeBank
     </h2>
+    <div *ngIf="errorMessage" style="color: red; font-size: small;">
+      {{ errorMessage }}
+    </div>
+    <div *ngIf="userExistsMessage" style="color: red; font-size: small;">
+      {{ userExistsMessage }}
+    </div>
     <h3>Create Your SafeBank Account</h3>
   
     <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="form signup-form">
@@ -15,9 +21,9 @@
         required
         placeholder="Enter Your Full Name"
       />
-      <div *ngIf="signupForm.get('fullName')?.touched && signupForm.get('fullName')?.invalid" style="color: red; font-size: small;">
-        Full name is required
-      </div>
+        <div *ngIf="signupForm.get('fullName')?.touched && signupForm.get('fullName')?.invalid" style="color: red; font-size: small;">
+          Full name is required
+        </div>
   
       <label for="signup-email">Email</label>
       <input
@@ -51,12 +57,12 @@
         You must agree to the terms
       </div>
   
-      <button type="submit" class="form-button" >Sign Up</button>
+      <button type="submit" class="form-button">Sign Up</button>
     </form>
   
-    <p class="redirect-form">
-      Already have an account?
-      <a routerLink="/login">Login here</a>
-    </p>
+    <a routerLink="/login" class="redirect-form"><p>Already have an account?</p></a>
+
   </div>
+  
+
   

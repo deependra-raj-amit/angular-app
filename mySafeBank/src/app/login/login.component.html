@@ -3,36 +3,39 @@
     <img src="assets/images/safebank.png" alt="safebank logo" class="logo" />
     SafeBank
   </h2>
+  <div *ngIf="errorMessage" style="color: red; font-size: small;">
+    {{ errorMessage }}
+  </div>
   <h3>Login to SafeBank</h3>
 
   <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="form login-form">
-    <label for="login-email">Email</label>
+    <label for="login-email">Email*</label>
     <input
       type="email"
       id="login-email"
       formControlName="email"
       required
-      placeholder="you@example.com"
+      placeholder="Enter Your Email"
     />
     <div *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid" style="color: red; font-size: small;">
       Please enter a valid email.
     </div>
 
-    <label for="login-password">Password</label>
+    <label for="login-password">Password*</label>
     <input
       type="password"
       id="login-password"
       formControlName="password"
       required
-      placeholder="Password"
+      placeholder="******"
     />
     <div *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid" style="color: red; font-size: small;">
       Password is required.
     </div>
 
-    <button type="submit" class="form-button" [disabled]="loginForm.invalid">Login</button>
+    <button type="submit" class="form-button">Login</button>
   </form>
 
   <a routerLink="/signup" class="redirect-form"><p>Don't have an account?</p></a>
-  <a routerLink="/forgot-password" class="redirect-form"><p>Forgot Password</p></a>
+  <a routerLink="/forget-password" class="redirect-form"><p>Forgot Password</p></a>
 </div>

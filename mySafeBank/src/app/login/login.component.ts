@@ -15,7 +15,7 @@ export class LoginComponent {
       password: ['', Validators.required]
     });
   }
-
+  errorMessage: string = '';
   onSubmit() {
     if (this.loginForm.valid) {
       const { email, password } = this.loginForm.value;
@@ -24,12 +24,14 @@ export class LoginComponent {
       const user = users.find((u: any) => u.email === email && u.password === password);
 
       if (user) {
-        alert('Login successful!');
         localStorage.setItem('loggedInUser', JSON.stringify(user));
-        this.router.navigate(['/dashboard']); // You can change route as needed
+        this.router.navigate(['/signup']); 
+        this.errorMessage= '';
       } else {
-        alert('Invalid email or password');
+        this.errorMessage = 'Invalid email or password';
       }
+    } else {
+      this.errorMessage = 'Please fill all the required fields';
     }
   }
 }
