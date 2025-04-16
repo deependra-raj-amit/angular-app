@@ -1,0 +1,62 @@
+<div class="form-container">
+    <h2>
+      <img src="assets/images/safebank.png" alt="safebank logo" class="logo" />
+      SafeBank
+    </h2>
+    <h3>Create Your SafeBank Account</h3>
+  
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="form signup-form">
+      
+      <label for="signup-name">Full Name</label>
+      <input
+        type="text"
+        id="signup-name"
+        formControlName="fullName"
+        required
+        placeholder="Enter Your Full Name"
+      />
+      <div *ngIf="signupForm.get('fullName')?.touched && signupForm.get('fullName')?.invalid" style="color: red; font-size: small;">
+        Full name is required
+      </div>
+  
+      <label for="signup-email">Email</label>
+      <input
+        type="email"
+        id="signup-email"
+        formControlName="email"
+        required
+        placeholder="Enter Your Email"
+      />
+      <div *ngIf="signupForm.get('email')?.touched && signupForm.get('email')?.invalid" style="color: red; font-size: small;">
+        Enter a valid email
+      </div>
+  
+      <label for="signup-password">Password</label>    
+      <input
+        type="password"
+        id="signup-password"
+        formControlName="password"
+        required
+        placeholder="••••••••"
+      />
+      <div *ngIf="signupForm.get('password')?.touched && signupForm.get('password')?.invalid" style="color: red; font-size: small;">
+        Password must be at least 6 characters
+      </div>
+  
+      <label>
+        <input type="checkbox" formControlName="terms" />
+        I agree to the terms and conditions
+      </label>
+      <div *ngIf="signupForm.get('terms')?.touched && signupForm.get('terms')?.invalid" style="color: red; font-size: small;">
+        You must agree to the terms
+      </div>
+  
+      <button type="submit" class="form-button" >Sign Up</button>
+    </form>
+  
+    <p class="redirect-form">
+      Already have an account?
+      <a routerLink="/login">Login here</a>
+    </p>
+  </div>
+  
