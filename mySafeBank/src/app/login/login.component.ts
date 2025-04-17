@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
   loginForm: FormGroup;
+  loggedIn: boolean = false;
 
   constructor(private fb: FormBuilder, private router: Router) {
     this.loginForm = this.fb.group({
@@ -25,13 +26,15 @@ export class LoginComponent {
 
       if (user) {
         localStorage.setItem('loggedInUser', JSON.stringify(user));
-        this.router.navigate(['/signup']); 
+        this.router.navigate(['/dashboard']); 
         this.errorMessage= '';
+        
       } else {
         this.errorMessage = 'Invalid email or password';
       }
     } else {
       this.errorMessage = 'Please fill all the required fields';
     }
+    this.loggedIn = true;
   }
 }

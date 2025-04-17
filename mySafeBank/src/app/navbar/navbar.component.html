@@ -1,13 +1,14 @@
 <nav>
     
     <ul>
-        <img src="assets/images/safebank.png" alt="safebank logo" class="logo" style=" " />
+        <img src="assets/images/safebank.png" alt="safebank logo" class="logo" style=" " /><h2 style="color: whitesmoke;">Safebank</h2>
       <li><a routerLink="/dashboard">Dashboard</a></li>
-      <li><a routerLink="/accounts">My Accounts</a></li>
+      <li><a routerLink="/accounts">Profile</a></li>
       <li><a routerLink="/transactions">Transaction History</a></li>
     </ul>
     <div class="user-info">
       <span class="user-name">Welcome, userName </span>
-      <button class="logout-button">Logout</button>
+      <a routerLink="/login"><button class="logout-button">Logout</button></a>
+      
     </div>
   </nav>

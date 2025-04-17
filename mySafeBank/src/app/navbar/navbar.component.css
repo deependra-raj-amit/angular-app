@@ -25,6 +25,8 @@ ul {
     display: flex;
     gap: 25px;
     padding: 0;
+    align-items: center;
+    margin: 0;
     
 }
 
@@ -63,7 +65,7 @@ li a:hover {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.1s;
-    margin-right: 25px;
+    margin-right: 35px;
 }
 
 .logout-button:hover {
