@@ -16,11 +16,17 @@ export class TransactionsComponent implements OnInit {
     { date: '15-Apr-2025', description: 'Electricity Bill', type: 'Debit', amount: '₹1,200.00', balance: '₹2,00,000.00' },
     { date: '14-Apr-2025', description: 'Online Shopping - Amazon', type: 'Debit', amount: '₹3,499.00', balance: '₹2,01,200.00' },
     { date: '13-Apr-2025', description: 'Mobile Recharge', type: 'Debit', amount: '₹299.00', balance: '₹2,04,699.00' },
-    { date: '12-Apr-2025', description: 'NEFT from Akash', type: 'Credit', amount: '₹7,000.00', balance: '₹2,05,000.00' },
-    { date: '11-Apr-2025', description: 'Dining - Zomato', type: 'Debit', amount: '₹1,850.00', balance: '₹1,98,000.00' },
-    { date: '10-Apr-2025', description: 'Credit Card Payment', type: 'Debit', amount: '₹12,000.00', balance: '₹2,10,000.00' },
+    { date: '12-Apr-2025', description: 'NEFT from Acc - 5861425825225 | Name - Aakash', type: 'Credit', amount: '₹7,000.00', balance: '₹2,05,000.00' },
+    { date: '11-Apr-2025', description: 'Online Shopping - Zomato', type: 'Debit', amount: '₹1,850.00', balance: '₹1,98,000.00' },
+    { date: '10-Apr-2025', description: 'Loan Payment', type: 'Debit', amount: '₹12,000.00', balance: '₹2,10,000.00' },
     { date: '09-Apr-2025', description: 'Interest Credit', type: 'Credit', amount: '₹1,200.00', balance: '₹2,22,000.00' },
-    { date: '08-Apr-2025', description: 'Fuel - IndianOil', type: 'Debit', amount: '₹2,300.00', balance: '₹2,20,800.00' }
+    { date: '08-Apr-2025', description: 'Fuel Station - IndianOil', type: 'Debit', amount: '₹2,300.00', balance: '₹2,20,800.00' },
+    { date: '14-Apr-2025', description: 'Online Shopping - Amazon', type: 'Debit', amount: '₹3,499.00', balance: '₹2,01,200.00' },
+    { date: '13-Apr-2025', description: 'Mobile Recharge', type: 'Debit', amount: '₹299.00', balance: '₹2,04,699.00' },
+    { date: '12-Apr-2025', description: 'NEFT from Acc - 5861425825225 | Name - Aakash', type: 'Credit', amount: '₹7,000.00', balance: '₹2,05,000.00' },
+    { date: '11-Apr-2025', description: 'Online Shopping - Zomato', type: 'Debit', amount: '₹1,850.00', balance: '₹1,98,000.00' },
+    { date: '10-Apr-2025', description: 'Loan Payment', type: 'Debit', amount: '₹12,000.00', balance: '₹2,10,000.00' },
+    { date: '09-Apr-2025', description: 'Interest Credit', type: 'Credit', amount: '₹1,200.00', balance: '₹2,22,000.00' },  
   ];
   
 

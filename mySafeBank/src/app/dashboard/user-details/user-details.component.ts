@@ -17,6 +17,7 @@ export class UserDetailsComponent {
   userName = this.users.fullName;
   accountNumber = this.users.accountNumber;
   userEmail = this.users.email;
+  userPhone = this.users.phone;
 
   logout(){
     localStorage.removeItem('loggedInUser');

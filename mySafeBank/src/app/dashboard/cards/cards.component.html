@@ -1,5 +1,5 @@
 <div class="user-details-container">
-    <h2 class="user-details">My Cards</h2>
+    <h2 class="user-details">Active Cards</h2>
   </div>
   
   <div class="feature-grid">
@@ -10,7 +10,7 @@
           alt="{{ card.type }} card icon"
         />
       </div>
-      <div class="title">{{ card.type | titlecase }} Card</div>
+      <div class="title">{{card.provider}} {{ card.type | titlecase  }} Card</div>
       <div class="card-details">
         <p><strong>Card Number:</strong> **** **** **** {{ card.cardNumber.slice(-4) }}</p>
         <p><strong>Cardholder:</strong> {{ card.cardHolder }}</p>
@@ -19,4 +19,25 @@
       </div>
     </div>
   </div>
+
+  <div class="user-details-container">
+    <h2 class="user-details">Expired Cards</h2>
+  </div>
   
+  <div class="feature-grid">
+    <div class="expired-card" *ngFor="let card of expiredCards">
+      <div class="icon">
+        <img 
+          [src]="card.type === 'debit' ? 'assets/icons/card-details.png' : 'assets/icons/card-details.png'" 
+          alt="{{ card.type }} card icon"
+        />
+      </div>
+      <div class="title">{{card.provider}} {{ card.type | titlecase }} Card</div>
+      <div class="card-details">
+        <p><strong>Card Number:</strong> **** **** **** {{ card.cardNumber.slice(-4) }}</p>
+        <p><strong>Cardholder:</strong> {{ card.cardHolder }}</p>
+        <p><strong>Expiry:</strong> {{ card.expiry }}</p>
+        <p><strong>CVV:</strong> ***</p>
+      </div>
+    </div>
+  </div>

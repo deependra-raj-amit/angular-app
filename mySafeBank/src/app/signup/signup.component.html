@@ -36,6 +36,18 @@
       <div *ngIf="signupForm.get('email')?.touched && signupForm.get('email')?.invalid" style="color: red; font-size: small;">
         Enter a valid email
       </div>
+
+      <label for="signup-phone">Phone</label>
+      <input
+        type="phone"
+        id="signup-phone"
+        formControlName="phone"
+        required
+        placeholder="+91-xxxxxxxxxx"
+      />
+      <div *ngIf="signupForm.get('phone')?.touched && signupForm.get('phone')?.invalid" style="color: red; font-size: small;">
+        Enter a valid Phone Number
+      </div>
   
       <label for="signup-password">Password</label>    
       <input
