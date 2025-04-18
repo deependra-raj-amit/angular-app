@@ -27,14 +27,16 @@ ul {
     padding: 0;
     align-items: center;
     margin: 0;
-    
+    align-items: center;
+
 }
 
 li a {
     color: white;
     text-decoration: none;
     padding: 8px 12px;
-    border-radius: 6px;
+    border-radius: 3px;
+    padding-bottom: 5px;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -71,3 +73,11 @@ li a:hover {
 .logout-button:hover {
     background-color: #cc0000;
 }
+
+
+
+
+  nav ul li a.active-link {
+    border-bottom: 3px solid rgb(255, 255, 255);
+  }
+  

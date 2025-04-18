@@ -18,6 +18,7 @@ import { LoansCreditsComponent } from './dashboard/loans-credits/loans-credits.c
 import { UpiComponent } from './dashboard/upi/upi.component';
 import { InsuranceComponent } from './dashboard/insurance/insurance.component';
 import { CardsComponent } from './dashboard/cards/cards.component';
+import { TransactionsComponent } from './dashboard/transactions/transactions.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { CardsComponent } from './dashboard/cards/cards.component';
     LoansCreditsComponent,
     UpiComponent,
     InsuranceComponent,
-    CardsComponent
+    CardsComponent,
+    TransactionsComponent,
   ],
   imports: [
     BrowserModule,

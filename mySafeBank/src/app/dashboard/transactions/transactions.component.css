@@ -1,0 +1,67 @@
+.transactions-container {
+    padding: 0px;
+  }
+  
+  .history-card {
+    background-color: #f5f5f5;
+    color: #003366;
+    width: 96vw;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    font-size: 16px;
+  }
+
+  .form-control{
+    padding: 10px;
+    width: 25%;
+  }
+  
+  .transactions-table-container {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  .transactions-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .transactions-table th,
+  .transactions-table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  .transactions-table th {
+    background-color: #0059b3;
+    color: white;
+  }
+  
+  .transactions-table th:hover {
+    background-color: #011d5a;
+  }
+  
+  .transactions-table td:hover {
+    background-color: #dfe2fa;
+  }
+  
+  .user-details-container {
+    width: 93vw;
+    background-color: #f5f5f5;
+    padding: 20px 40px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+    height: auto;
+  }
+  
+  .user-details {
+    font-size: 18px;
+    color:  #003366;
+  }
+
+  

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,14 +8,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
-
-  constructor(private router: Router) {
+  constructor(private router: Router, private userService: UserService) {
     this.router;
   }
+ 
 
 
   features = [
-    { title: 'Account Summary', icon: 'assets/icons/account.png', route: '/account-summary' },
+    { title: 'Transactions', icon: 'assets/icons/account.png', route: '/transactions' },
     { title: 'Cards', icon: 'assets/icons/cards.png', route: '/cards' },
     { title: 'Transfer Money', icon: 'assets/icons/transfer.png', route: '/fund-transfer' },
     { title: 'Bill Payments', icon: 'assets/icons/bill.png', route: '/bills' },
@@ -28,4 +29,8 @@ export class DashboardComponent {
     this.router.navigate([route]);
   }
   
+  users = this.userService.users;
+  userName = this.users.fullName;
+  accountNumber = this.users.accountNumber;
+
 }

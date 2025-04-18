@@ -1,11 +1,40 @@
-<div class="user-card">
-    <h2>User Details</h2>
-    <div class="user-info">
-      <div><strong>Name:</strong> John Doe</div>
-      <div><strong>Account No.:</strong> 1234 5678 9012</div>
-      <div><strong>Account Type:</strong> Savings</div>
-      <div><strong>Available Balance:</strong> ₹2,45,000.00</div>
-      <div><strong>Interest Rate:</strong> 3.5% p.a.</div>
+<div class="user-profile">
+  <div class="profile-header">
+    <div class="profile-pic">
+      <img src="assets/icons/profile-pic.png" alt="User Profile Picture" class="profile-img"/>
+    </div>
+    <div class="profile-details">
+      <h2>{{userName}}</h2>
+      <p><strong>Email:</strong> {{userEmail}}</p>
+      <p><strong>Phone:</strong> +91-8964-2357-82</p>
+      <p><strong>Date of Birth:</strong> 01-Jan-1990</p>
     </div>
   </div>
-  
+
+  <div class="account-details">
+    <h3>Account Information</h3>
+    <p><strong>Account Number:</strong> {{accountNumber}}</p>
+    <p><strong>AccountAccount Type:</strong> Savings</p>
+  </div>
+
+  <div class="address-info">
+    <h3>Address</h3>
+    <p><strong>Permanent Address:</strong> ABC colony, Chennai, Tamil Nadu, India</p>
+    <p><strong>Residential Address:</strong> Same as Home Address</p>
+    <h3>Settings & Preferences</h3>
+    <p><strong>Language:</strong> English</p>
+    <p><strong>Notifications:</strong> Email, SMS</p>
+    <p><strong>Time Zone: IST</strong> (India Standard Time)</p>
+    <h3>Security Settings</h3>
+    <button>Update Password</button>
+    <button>Enable Two-Factor Authentication</button>
+  </div>
+
+    
+
+  <div class="profile-actions">
+    <button (click)="logout()" class="logout-btn">Logout</button>
+    <button (click)="closeAccount()" class="delete-btn">Close Account</button>
+  </div>
+
+</div>

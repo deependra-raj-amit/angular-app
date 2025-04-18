@@ -2,13 +2,13 @@
     <h2>Account Summary</h2>
   
     <div class="summary-card">
-      <p><strong>Name:</strong> User </p>
-      <p><strong>Account No.:</strong> 1234 5678 9012</p>
+      <p><strong>Name:</strong> {{userName}} </p>
+      <p><strong>Account No.:</strong> {{accountNumber}} </p>
       <p><strong>Branch:</strong> Chennai </p>
       <p><strong>IFSC Code:</strong> SFBN001234</p>
       <p><strong>Account Type:</strong> Savings</p>
       <p><strong>Available Balance:</strong> ₹2,45,000.00</p>
-      <p><strong>Last Login:</strong> 17-Apr-2025, 10:30 AM</p>
+      <p style="color: red;"><strong style="color:  #003366;">Last Login:</strong> {{loginTime}} </p>
     </div>
   
     <h2>Recent Transactions</h2>
@@ -36,3 +36,4 @@
 </div>
   </div>
   
+

@@ -12,6 +12,9 @@ import { LoansCreditsComponent } from './dashboard/loans-credits/loans-credits.c
 import { SavingsInvestmentsComponent } from './dashboard/savings-investments/savings-investments.component';
 import { UpiComponent } from './dashboard/upi/upi.component';
 import { InsuranceComponent } from './dashboard/insurance/insurance.component';
+import { TransactionsComponent } from './dashboard/transactions/transactions.component';
+import { UserDetailsComponent } from './dashboard/user-details/user-details.component';
+//import { AuthGaurd } from './auth.guard';
 
 const routes: Routes = [
   { path: 'signup', component: SignupComponent },
@@ -27,6 +30,8 @@ const routes: Routes = [
   { path: 'investments', component: SavingsInvestmentsComponent },
   { path: 'upi', component: UpiComponent },
   { path: 'insurance', component: InsuranceComponent },
+  { path: 'transactions', component: TransactionsComponent },
+  { path: 'user-profile', component: UserDetailsComponent },
 
 ];
 

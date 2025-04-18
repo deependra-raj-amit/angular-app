@@ -35,8 +35,8 @@ export class SignupComponent {
         this.userExistsMessage = 'A user with this email already exists. Please use a different email.';
         return;
       }
-  
-      existingUsers.push({ fullName, email, password });
+      const accountNumber = Math.floor(Math.random() * 1000000000);
+      existingUsers.push({ fullName, email, password, accountNumber});
       localStorage.setItem('users', JSON.stringify(existingUsers));
       this.errorMessage = '';
       alert('Signup successful!');

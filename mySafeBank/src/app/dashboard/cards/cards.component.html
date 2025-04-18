@@ -1,1 +1,22 @@
-<p>cards works!</p>
+<div class="user-details-container">
+    <h2 class="user-details">My Cards</h2>
+  </div>
+  
+  <div class="feature-grid">
+    <div class="feature-card" *ngFor="let card of userCards">
+      <div class="icon">
+        <img 
+          [src]="card.type === 'debit' ? 'assets/icons/card-details.png' : 'assets/icons/card-details.png'" 
+          alt="{{ card.type }} card icon"
+        />
+      </div>
+      <div class="title">{{ card.type | titlecase }} Card</div>
+      <div class="card-details">
+        <p><strong>Card Number:</strong> **** **** **** {{ card.cardNumber.slice(-4) }}</p>
+        <p><strong>Cardholder:</strong> {{ card.cardHolder }}</p>
+        <p><strong>Expiry:</strong> {{ card.expiry }}</p>
+        <p><strong>CVV:</strong> ***</p>
+      </div>
+    </div>
+  </div>
+  

@@ -1,14 +1,21 @@
 <nav>
+  <ul>
+    <img src="assets/images/safebank.png" alt="safebank logo" class="logo" />
+    <h2 style="color: whitesmoke;">Safebank</h2>
     
-    <ul>
-        <img src="assets/images/safebank.png" alt="safebank logo" class="logo" style=" " /><h2 style="color: whitesmoke;">Safebank</h2>
-      <li><a routerLink="/dashboard">Dashboard</a></li>
-      <li><a routerLink="/accounts">Profile</a></li>
-      <li><a routerLink="/transactions">Transaction History</a></li>
-    </ul>
-    <div class="user-info">
-      <span class="user-name">Welcome, userName </span>
-      <a routerLink="/login"><button class="logout-button">Logout</button></a>
-      
-    </div>
-  </nav>
+    <li>
+      <a routerLink="/dashboard" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Dashboard</a>
+    </li>
+    <li>
+      <a routerLink="/user-profile" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Profile</a>
+    </li>
+    <li>
+      <a routerLink="/account-summary" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Account Summary</a>
+    </li>
+  </ul>
+
+  <div class="user-info">
+    <span class="user-name">Welcome {{ userName }}</span>
+    <button (click)="logout()" class="logout-button">Logout</button>
+  </div>
+</nav>
