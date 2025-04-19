@@ -1,4 +1,31 @@
-<div class="container">
-    <img src="assets/icons/construction.png" alt="Under Construction" class="construction-img">
-    <p>This page is under construction...</p>
+<div class="transfer-container">
+<h3>Fund Transfer</h3>
+<form #transferForm="ngForm" (ngSubmit)="submitTransfer()" class="transfer-form">
+  <div class="form-group">
+    <label for="toAccount">To Account</label>
+    <input type="text" [(ngModel)]="toAccount" name="toAccount" placeholder="Account Number" required />
   </div>
+  
+  <div class="form-group">
+    <label for="ifsc">IFSC Code</label>
+    <input type="text" [(ngModel)]="ifsc" name="ifsc" placeholder="IFSC Code" required />
+  </div>
+  
+  <div class="form-group">
+    <label for="name">Recipient Name</label>
+    <input type="text" [(ngModel)]="name" name="name" placeholder="Recipient Name" required />
+  </div>
+  
+  <div class="form-group">
+    <label for="amount">Amount</label>
+    <input type="number" [(ngModel)]="amount" name="amount" placeholder="Amount" required />
+  </div>
+  
+  <button type="submit" [disabled]="!transferForm.form.valid">Transfer</button>
+
+</form>
+</div>
+<div *ngIf="confirmationMessage" class="confirmation-message">
+  <p>{{ confirmationMessage }}</p>
+</div>
+

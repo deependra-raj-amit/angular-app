@@ -1,4 +1,12 @@
-<div class="container">
-    <img src="assets/icons/construction.png" alt="Under Construction" class="construction-img">
-    <p>This page is under construction...</p>
+<div class="bill-payment-container">
+  <h2 class="page-title">Bill Payments</h2>
+
+  <div class="bill-types-grid">
+    <div class="bill-card" *ngFor="let bill of billTypes" (click)="selectBill(bill)">
+      <div class="icon">
+        <i [class]="bill.icon"></i>
+      </div>
+      <div class="label">{{ bill.label }}</div>
+    </div>
   </div>
+</div>
