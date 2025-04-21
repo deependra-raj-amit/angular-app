@@ -54,7 +54,7 @@ import { DepositListComponent } from './deposit/deposit-list/deposit-list.compon
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [LoginComponent],
+  providers: [LoginComponent, TransactionsComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

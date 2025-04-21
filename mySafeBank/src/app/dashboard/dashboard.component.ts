@@ -32,6 +32,7 @@ export class DashboardComponent {
   users = this.userService.users;
   userName = this.users.fullName;
   accountNumber = this.users.accountNumber;
-  availableBalance = ""
+  availableBalance = `₹${(this.users.balance || 0).toLocaleString('en-IN')}.00`;
 
+                   
 }

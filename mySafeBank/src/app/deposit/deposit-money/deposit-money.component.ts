@@ -7,12 +7,13 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class DepositMoneyComponent {
   amount: number = 0;
+  errorMessage: string = '';
 
   @Output() deposit = new EventEmitter<number>();
 
   handleDeposit() {
     if (this.amount <= 0) {
-      alert('Please enter a valid amount greater than 0');
+      this.errorMessage = 'Please enter a valid amount greater than 0 ';
       return;
     }
 

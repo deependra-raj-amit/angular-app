@@ -1,6 +1,7 @@
 <h3>Deposit Money</h3>
 <form>
   <label>Enter Amount:</label>
+  <div class="error-message">{{errorMessage}}</div>
   <input type="number" [(ngModel)]="amount" name="amount" placeholder="₹0.00" min = 1/>
   <button type="button" (click)="handleDeposit()">Deposit</button>
 </form>

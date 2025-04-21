@@ -11,6 +11,8 @@ import { TransactionService } from '../services/transaction.service';
 export class DepositComponent {
   currentBalance: number = 0;
   depositHistory: DepositRecord[] = [];
+  errorMessage: string = '';
+  successMessage: string = '';
 
   constructor(
     private userService: UserService,
@@ -35,12 +37,13 @@ export class DepositComponent {
       const newDeposit: DepositRecord = {
         date: new Date().toLocaleString(),
         amount
-      };
+       };
 
       this.depositHistory.unshift(newDeposit);
       this.saveDepositHistory();
-    } else {
-      alert(success.message);
+      this.successMessage = `₹${amount} deposited to your account successfully`
+    } else{
+      this.errorMessage = `Transaction failed!!`
     }
   }
 

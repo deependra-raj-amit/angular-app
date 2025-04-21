@@ -5,8 +5,14 @@ import { Injectable } from '@angular/core';
 })
 export class UserService {
 
+ 
+
+  
+  
+
   getCurrentUser() {
     return JSON.parse(localStorage.getItem('loggedInUser') || '{}');
+    
   }
 
   getCurrentUserEmail(): string {
@@ -17,6 +23,7 @@ export class UserService {
     return this.getCurrentUser()?.balance || 0;
   }
 
+  
   getAllUsers(): any[] {
   return JSON.parse(localStorage.getItem('users') || '[]');
 }
@@ -24,7 +31,7 @@ users = JSON.parse(localStorage.getItem('loggedInUser') || '[]');
   //userName = this.users.fullName;
 
   //accountNumber = 
-
+ 
   loginTime = JSON.parse(localStorage.getItem('loginTime') || '[]');
 
 }

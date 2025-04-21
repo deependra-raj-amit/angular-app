@@ -13,13 +13,13 @@ export class FundTransferComponent {
   name: string = '';
   amount: number | null = null;
   confirmationMessage: string = ''; 
-
+  status: boolean = false;
   constructor(private transactionService: TransactionService) {}
 
   submitTransfer() {
     if (this.amount === null || this.amount <= 0) {
       this.confirmationMessage = 'Please enter a valid amount greater than 0.';
-      return; // Prevent further execution if amount is invalid
+      return; 
     }
     if(this.toAccount===null && this.ifsc === null && this.name === null ){
       this.confirmationMessage = "All fields are required"
@@ -31,19 +31,22 @@ export class FundTransferComponent {
     if (this.amount > 0) {
       type = 'Debit';  
     }
-  
+
+
+
     const transaction: CustomTransaction = {
       date: new Date().toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }),
       description: `NEFT to Acc - ${this.toAccount} | Name - ${this.name}`,
       type: type, 
       amount: `₹${this.amount.toLocaleString('en-IN')}.00`,
       balance: '',  
+      //status = true;
     };
   
 
     this.transactionService.addTransaction(transaction);
 
-    this.confirmationMessage = `₹${this.amount.toLocaleString('en-IN')}.00 has been sent to ${this.name} (Acc: ${this.toAccount}).`;
+   
     
     this.toAccount = '';
     this.ifsc = '';

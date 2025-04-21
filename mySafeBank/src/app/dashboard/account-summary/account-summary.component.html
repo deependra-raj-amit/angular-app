@@ -7,7 +7,7 @@
       <p><strong>Branch:</strong> Chennai </p>
       <p><strong>IFSC Code:</strong> SFBN001234</p>
       <p><strong>Account Type:</strong> Savings</p>
-      <p><strong>Available Balance:</strong> ₹2,45,000.00</p>
+      <p><strong>Available Balance:</strong> {{availableBalance}} </p>
       <p style="color: red;"><strong style="color:  #003366;">Last Login:</strong> {{loginTime}} </p>
     </div>
   
@@ -24,7 +24,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let txn of transactions">
+        <tr *ngFor="let txn of transactions  ">
           <td>{{ txn.date }}</td>
           <td>{{ txn.description }}</td>
           <td>{{ txn.type }}</td>

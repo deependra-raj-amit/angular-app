@@ -25,3 +25,8 @@ form {
     background-color: #218838;
   }
   
+
+  .error-message {
+    color: red;
+    font-size: small;
+  }

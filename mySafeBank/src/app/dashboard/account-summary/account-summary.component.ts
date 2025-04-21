@@ -1,29 +1,58 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../services/user.service';
+import { TransactionService } from 'src/app/services/transaction.service';
+import { TransactionsComponent } from '../transactions/transactions.component';
+import { CustomTransaction } from 'src/app/services/transaction.service';
 
 @Component({
   selector: 'app-account-summary',
   templateUrl: './account-summary.component.html',
   styleUrls: ['./account-summary.component.css']
 })
-export class AccountSummaryComponent {
+export class AccountSummaryComponent implements OnInit  {
 
-  constructor(private userService: UserService){
+  transactions: CustomTransaction[] = [];
+  //latestTransactions = this.transactions.slice(0, 5);
+  // userName: string = '';
+  // accountNumber: string = '';
+  // availableBalance: string = '';
+  
+
+  constructor(private userService: UserService, private transactionsComponent: TransactionsComponent, private transactionService: TransactionService){
     this.userService;
   }
+  
 
-  transactions = [
-    { date: '17-Apr-2025', description: 'ATM Withdrawal', type: 'Debit', amount: '₹5,000.00', balance: '₹2,45,000.00' },
-    { date: '16-Apr-2025', description: 'Salary Credit', type: 'Credit', amount: '₹50,000.00', balance: '₹2,50,000.00' },
-    { date: '15-Apr-2025', description: 'Electricity Bill', type: 'Debit', amount: '₹1,200.00', balance: '₹2,00,000.00' },
-    { date: '12-Apr-2025', description: 'Account Transfer', type: 'Debit', amount: '₹10,000.00', balance: '₹2,01,200.00' },
-    { date: '10-Apr-2025', description: 'Interest Credit', type: 'Credit', amount: '₹1,000.00', balance: '₹2,11,200.00' },
-  ]
+  
+  
+    ngOnInit(): void {
+      const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser') || '{}');
+  
+      if (loggedInUser) {
+        this.userName = loggedInUser.fullName;
+        this.accountNumber = loggedInUser.accountNumber;
+        this.availableBalance = `₹${(loggedInUser.balance || 0).toLocaleString('en-IN')}.00`;
+      }
+  
+      this.transactionService.transactions$.subscribe((newTxList: CustomTransaction[]) => {
+        this.transactions = [...newTxList];
+      });
+
+      
+      //this.sortTransactions();
+
+    }
+
+    sortTransactions(): void {
+      this.transactions.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()); 
+    }
+  
 
  
   users = this.userService.users;
   userName = this.users.fullName;
   accountNumber = this.users.accountNumber;
   loginTime = this.users.loginTime;
+  availableBalance = `₹${(this.users.balance || 0).toLocaleString('en-IN')}.00`;
 
 }
