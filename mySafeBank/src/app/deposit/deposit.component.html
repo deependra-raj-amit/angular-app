@@ -1,0 +1,11 @@
+<div class="deposit-container">
+    <h2>Deposit Section</h2>
+  
+    <div class="sub-components">
+      <app-deposit-money (deposit)="onAmountDeposited($event)"></app-deposit-money>
+      <app-check-balance [balance]="currentBalance"></app-check-balance>
+    </div>
+  
+    <app-deposit-list [deposits]="depositHistory"></app-deposit-list>
+  </div>
+  

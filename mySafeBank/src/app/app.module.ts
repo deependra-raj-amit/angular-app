@@ -20,6 +20,10 @@ import { UpiComponent } from './dashboard/upi/upi.component';
 import { InsuranceComponent } from './dashboard/insurance/insurance.component';
 import { CardsComponent } from './dashboard/cards/cards.component';
 import { TransactionsComponent } from './dashboard/transactions/transactions.component';
+import { DepositComponent } from './deposit/deposit.component';
+import { DepositMoneyComponent } from './deposit/deposit-money/deposit-money.component';
+import { CheckBalanceComponent } from './deposit/check-balance/check-balance.component';
+import { DepositListComponent } from './deposit/deposit-list/deposit-list.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +43,10 @@ import { TransactionsComponent } from './dashboard/transactions/transactions.com
     InsuranceComponent,
     CardsComponent,
     TransactionsComponent,
+    DepositComponent,
+    DepositMoneyComponent,
+    CheckBalanceComponent,
+    DepositListComponent,
   ],
   imports: [
     BrowserModule,

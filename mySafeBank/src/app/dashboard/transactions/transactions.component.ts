@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { UserService } from '../../services/user.service';
 import { TransactionService, CustomTransaction } from '../../services/transaction.service';
 
 @Component({
@@ -11,26 +10,25 @@ import { TransactionService, CustomTransaction } from '../../services/transactio
 export class TransactionsComponent implements OnInit {
   searchControl = new FormControl('');
   transactions: CustomTransaction[] = [];
-
-
-
   filteredTransactions: CustomTransaction[] = [];
 
-  users = this.userService.users;
-  userName = this.users.fullName;
-  accountNumber = this.users.accountNumber;
+  userName: string = '';
+  accountNumber: string = '';
+  availableBalance: string = '';
 
-  constructor(
-    private userService: UserService,
-    private transactionService: TransactionService
-  ) {}
+  constructor(private transactionService: TransactionService) {}
 
   ngOnInit(): void {
-    this.transactions = [...this.transactions];
-    this.filteredTransactions = [...this.transactions];
+    const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser') || '{}');
+
+    if (loggedInUser) {
+      this.userName = loggedInUser.fullName;
+      this.accountNumber = loggedInUser.accountNumber;
+      this.availableBalance = `₹${(loggedInUser.balance || 0).toLocaleString('en-IN')}.00`;
+    }
 
     this.transactionService.transactions$.subscribe((newTxList) => {
-      this.transactions = [...newTxList, ...this.transactions];
+      this.transactions = [...newTxList];
       this.applySearch(this.searchControl.value || '');
     });
 

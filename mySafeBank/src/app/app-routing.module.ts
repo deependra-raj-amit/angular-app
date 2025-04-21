@@ -14,6 +14,7 @@ import { UpiComponent } from './dashboard/upi/upi.component';
 import { InsuranceComponent } from './dashboard/insurance/insurance.component';
 import { TransactionsComponent } from './dashboard/transactions/transactions.component';
 import { UserDetailsComponent } from './dashboard/user-details/user-details.component';
+import { DepositComponent } from './deposit/deposit.component'
 //import { AuthGaurd } from './auth.guard';
 
 const routes: Routes = [
@@ -32,6 +33,7 @@ const routes: Routes = [
   { path: 'insurance', component: InsuranceComponent },
   { path: 'transactions', component: TransactionsComponent },
   { path: 'user-profile', component: UserDetailsComponent },
+  { path: 'deposit', component: DepositComponent }, 
 
 ];
 

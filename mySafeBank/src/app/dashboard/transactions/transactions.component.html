@@ -1,48 +1,42 @@
 <div class="user-details-container">
-    <div class="user-details">
-      <p><strong>Name:</strong> {{userName}} </p>
-      <p><strong>Account No.:</strong> {{accountNumber}} </p>
-      <p><strong>Available Balance:</strong> ₹2,45,000.00</p>
-    </div>
+  <div class="user-details">
+    <p><strong>Name:</strong> {{ userName }}</p>
+    <p><strong>Account No.:</strong> {{ accountNumber }}</p>
+    <p><strong>Available Balance:</strong> {{ availableBalance }}</p>
   </div>
+</div>
 
 <div class="transactions-container">
-
-    <div class="history-card">
-      <h3>Transaction History</h3>
-      <input
-        type="text"
-        [formControl]="searchControl"
-        placeholder="Search by description or type"
-        class="form-control"
-      />
-    </div>
-  
-    <div class="transactions-table-container">
-      <table class="transactions-table">
-        <thead>
-          <tr>
-            <th>Date</th>
-            <th>Description</th>
-            <th>Type</th>
-            <th>Amount</th>
-            <th>Balance</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let txn of filteredTransactions">
-            <td>{{ txn.date }}</td>
-            <td>{{ txn.description }}</td>
-            <td>{{ txn.type }}</td>
-            <td>{{ txn.amount }}</td>
-            <td>{{ txn.balance }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  
+  <div class="history-card">
+    <h3>Transaction History</h3>
+    <input
+      type="text"
+      [formControl]="searchControl"
+      placeholder="Search by description or type"
+      class="form-control"
+    />
   </div>
-  
 
-
-
+  <div class="transactions-table-container">
+    <table class="transactions-table">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Description</th>
+          <th>Type</th>
+          <th>Amount</th>
+          <th>Balance</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let txn of filteredTransactions">
+          <td>{{ txn.date }}</td>
+          <td>{{ txn.description }}</td>
+          <td>{{ txn.type }}</td>
+          <td>{{ txn.amount }}</td>
+          <td>{{ txn.balance }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

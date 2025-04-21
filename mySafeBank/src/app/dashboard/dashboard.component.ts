@@ -32,5 +32,6 @@ export class DashboardComponent {
   users = this.userService.users;
   userName = this.users.fullName;
   accountNumber = this.users.accountNumber;
+  availableBalance = ""
 
 }
