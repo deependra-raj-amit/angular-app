@@ -1,3 +1,6 @@
+<div class="show-balance">
+  <h3>Available Balance : {{availableBalance}}</h3>
+</div>
 <div class="transfer-container">
 <h3>Fund Transfer</h3>
 <form #transferForm="ngForm" (ngSubmit)="submitTransfer()" class="transfer-form">
@@ -27,5 +30,8 @@
 </div>
 <div *ngIf="confirmationMessage" class="confirmation-message">
   <p>{{ confirmationMessage }}</p>
+</div>
+<div *ngIf="errorMessage" class="error-message">
+  <p>{{ errorMessage }}</p>
 </div>
 

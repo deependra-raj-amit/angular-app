@@ -63,5 +63,22 @@
     font-size: 18px;
     color:  #003366;
   }
+ 
+  .pdf-btn-container {
+    margin-left: 90%;
+    margin-bottom: 10px;
+  }
 
+  .pdf-btn {
+    background-color: #0059b3;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16 px;
+    cursor: pointer;
   
+  }

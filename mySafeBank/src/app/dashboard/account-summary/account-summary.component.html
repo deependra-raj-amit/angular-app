@@ -24,7 +24,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let txn of transactions  ">
+        <tr *ngFor="let txn of transactions | slice: -5 ">
           <td>{{ txn.date }}</td>
           <td>{{ txn.description }}</td>
           <td>{{ txn.type }}</td>

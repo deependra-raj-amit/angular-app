@@ -77,3 +77,18 @@ button:disabled {
   border: 1px solid #4CAF50;
   border-radius: 5px;
 }
+
+.error-message {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f7e8e7;
+  color: red;
+  border: 1px solid red;
+  border-radius: 5px;
+}
+
+.show-balance {
+  border: 0.5px solid #004080;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}

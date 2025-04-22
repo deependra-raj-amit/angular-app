@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { TransactionService } from '../../services/transaction.service';
-import { CustomTransaction } from '../../services/transaction.service'; // Add this import
+import { CustomTransaction } from '../../services/transaction.service';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-fund-transfer',
@@ -13,16 +14,22 @@ export class FundTransferComponent {
   name: string = '';
   amount: number | null = null;
   confirmationMessage: string = ''; 
+  errorMessage: string = '';
   status: boolean = false;
-  constructor(private transactionService: TransactionService) {}
+  constructor(private transactionService: TransactionService, private userService: UserService) {
+    this.userService;
+  }
+  users = this.userService.users;
+  availableBalance = `₹${(this.users.balance || 0).toLocaleString('en-IN')}.00`;
+
 
   submitTransfer() {
     if (this.amount === null || this.amount <= 0) {
-      this.confirmationMessage = 'Please enter a valid amount greater than 0.';
+      this.errorMessage = 'Please enter a valid amount greater than 0.';
       return; 
     }
     if(this.toAccount===null && this.ifsc === null && this.name === null ){
-      this.confirmationMessage = "All fields are required"
+      this.errorMessage = "All fields are required"
       return;
     }
 
@@ -45,7 +52,7 @@ export class FundTransferComponent {
   
 
     this.transactionService.addTransaction(transaction);
-
+    this.confirmationMessage = `₹${this.amount} has been sent to ${this.toAccount} successfully` 
    
     
     this.toAccount = '';

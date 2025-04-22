@@ -52,7 +52,7 @@ import { DepositListComponent } from './deposit/deposit-list/deposit-list.compon
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [LoginComponent, TransactionsComponent],
   bootstrap: [AppComponent]

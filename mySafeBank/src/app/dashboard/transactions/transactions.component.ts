@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { TransactionService, CustomTransaction } from '../../services/transaction.service';
+import { PdfGeneratorService } from '../../services/pdf-generator.service'
 
 @Component({
   selector: 'app-transactions',
@@ -16,7 +17,7 @@ export class TransactionsComponent implements OnInit {
   accountNumber: string = '';
   availableBalance: string = '';
 
-  constructor(private transactionService: TransactionService) {}
+  constructor(private transactionService: TransactionService, private pdfService: PdfGeneratorService) {}
 
   ngOnInit(): void {
     const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser') || '{}');
@@ -44,4 +45,8 @@ export class TransactionsComponent implements OnInit {
       tx.type.toLowerCase().includes(keyword)
     );
   }
+  downloadPdf() {
+    this.pdfService.generateTransactionPdf(this.transactions,this.userName, this.accountNumber, this.availableBalance);
+  }
+
 }
