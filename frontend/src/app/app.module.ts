@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,6 +25,8 @@ import { DepositComponent } from './deposit/deposit.component';
 import { DepositMoneyComponent } from './deposit/deposit-money/deposit-money.component';
 import { CheckBalanceComponent } from './deposit/check-balance/check-balance.component';
 import { DepositListComponent } from './deposit/deposit-list/deposit-list.component';
+import { EmailService } from './services/email.service';
+import { PdfDataComponent } from './pdf-data/pdf-data.component';
 
 @NgModule({
   declarations: [
@@ -47,14 +50,16 @@ import { DepositListComponent } from './deposit/deposit-list/deposit-list.compon
     DepositMoneyComponent,
     CheckBalanceComponent,
     DepositListComponent,
+    PdfDataComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
+    HttpClientModule
   ],
-  providers: [LoginComponent, TransactionsComponent],
+  providers: [LoginComponent, TransactionsComponent, EmailService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

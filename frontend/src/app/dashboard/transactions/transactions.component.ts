@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { TransactionService, CustomTransaction } from '../../services/transaction.service';
 import { PdfGeneratorService } from '../../services/pdf-generator.service'
+import { EmailService } from '../../services/email.service';
+import { UserService } from 'src/app/services/user.service';
+
 
 @Component({
   selector: 'app-transactions',
@@ -17,7 +20,12 @@ export class TransactionsComponent implements OnInit {
   accountNumber: string = '';
   availableBalance: string = '';
 
-  constructor(private transactionService: TransactionService, private pdfService: PdfGeneratorService) {}
+  constructor(
+    private transactionService: TransactionService, 
+    private pdfService: PdfGeneratorService, 
+    private emailService: EmailService,
+    private userService: UserService
+  ) {}
 
   ngOnInit(): void {
     const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser') || '{}');
@@ -48,5 +56,22 @@ export class TransactionsComponent implements OnInit {
   downloadPdf() {
     this.pdfService.generateTransactionPdf(this.transactions,this.userName, this.accountNumber, this.availableBalance);
   }
+
+  users = this.userService.users;
+  //userName = this.users.fullName;
+  userEmail = this.users.email;
+
+  sendEmailReport() {
+    const user = {
+      name: this.userName,
+      email: this.users.email
+    };
+  
+    this.emailService.sendTransactionEmail(user, this.transactions).subscribe({
+      next: (res) => alert('Email sent successfully!'),
+      error: (err) => alert('Failed to send email: ' + err.message)
+    });
+  }
+  
 
 }

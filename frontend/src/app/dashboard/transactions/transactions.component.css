@@ -65,8 +65,9 @@
   }
  
   .pdf-btn-container {
-    margin-left: 90%;
+    margin-left: 79%;
     margin-bottom: 10px;
+    padding: 10px;
   }
 
   .pdf-btn {
@@ -80,5 +81,8 @@
     display: inline-block;
     font-size: 16 px;
     cursor: pointer;
+    height: 40px;
+    width: 140px;
+    margin-right: 10px;
   
   }
