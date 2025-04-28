@@ -15,6 +15,7 @@ import { InsuranceComponent } from './dashboard/insurance/insurance.component';
 import { TransactionsComponent } from './dashboard/transactions/transactions.component';
 import { UserDetailsComponent } from './dashboard/user-details/user-details.component';
 import { DepositComponent } from './deposit/deposit.component'
+import { LetterOfCreditComponent } from './letter-of-credit/letter-of-credit.component'
 //import { AuthGaurd } from './auth.guard';
 
 const routes: Routes = [
@@ -34,6 +35,7 @@ const routes: Routes = [
   { path: 'transactions', component: TransactionsComponent },
   { path: 'user-profile', component: UserDetailsComponent },
   { path: 'deposit', component: DepositComponent }, 
+  { path: 'letter-of-credit', component: LetterOfCreditComponent },
 
 ];
 

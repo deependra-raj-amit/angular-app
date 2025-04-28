@@ -26,7 +26,9 @@ import { DepositMoneyComponent } from './deposit/deposit-money/deposit-money.com
 import { CheckBalanceComponent } from './deposit/check-balance/check-balance.component';
 import { DepositListComponent } from './deposit/deposit-list/deposit-list.component';
 import { EmailService } from './services/email.service';
-import { PdfDataComponent } from './pdf-data/pdf-data.component';
+import { TestPdfComponent } from './test-pdf/test-pdf.component';
+import { PdfMakeComponent } from './pdf-make/pdf-make.component';
+import { LetterOfCreditComponent } from './letter-of-credit/letter-of-credit.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +52,9 @@ import { PdfDataComponent } from './pdf-data/pdf-data.component';
     DepositMoneyComponent,
     CheckBalanceComponent,
     DepositListComponent,
-    PdfDataComponent,
+    TestPdfComponent,
+    PdfMakeComponent,
+    LetterOfCreditComponent,
   ],
   imports: [
     BrowserModule,
